@@ -1,6 +1,6 @@
 [package]
 name = "infix_macro"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "Provides a macro that generates the neccesary boilerplate to use \"*operator*\" infix functions."
 readme = "README.md"
