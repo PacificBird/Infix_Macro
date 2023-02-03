@@ -6,7 +6,9 @@ Using the technique first displayed by @wishawa on
 by overloading the multiplication operator, and by creating an intermediate struct that "passes" 
 the left hand operand over to the right over the multiplications, you can create custom binary 
 infix operations that work like this: 
->`let dot_product = vector_a *dot* vector_b;`
+```rs
+let dot_product = vector_a *dot* vector_b;
+```
 
 Unfortunately, to force this unintended functionality out of rust it requires quite a lot of boilerplate (see the linked RFC ). 
 Un-unfortunately, this boilerplate is almost exactly identical between implementations, 
@@ -15,7 +17,9 @@ which means we can macro it all away! That's exactly what this package does.
 ##### Examples and Usage
 
 Simply `cargo add infix_macro` and then place `use infix_macro::infix;` at the top of your module, then follow this syntax:
-> `infix!(name, partial_name, T, U, F);`
+```rs
+infix!(name, partial_name, T, U, F);
+```
 
 where `name` is the operator you'll actually be using (I recommend something short and lower case), 
 `partial_name` is the name of the intermediary `struct` used to pass the value over the overloaded multiplications 
