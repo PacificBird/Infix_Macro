@@ -6,7 +6,7 @@ description = "Provides a macro that generates the neccesary boilerplate to use 
 readme = "README.md"
 repository = "https://github.com/PacificBird/Infix_Macro"
 license-file = "UNLICENSE"
-keywords = ["macro","infix operation"]
+keywords = ["macro"]
 categories = ["rust-patterns"]
 
 [dependencies]
