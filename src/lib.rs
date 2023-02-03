@@ -3,14 +3,14 @@
 ///This is possible using a technique abusing operator overloading as first demonstrated
 ///by wishawa on [RFC #1579](https://github.com/rust-lang/rfcs/issues/1579#issuecomment-1398724803)
 ///
-///#Examples
+///# Examples
 ///
 ///Basic usage:
 ///
 ///```
 ///use infix_macro::infix;
 ///
-///infix!(add, AddPartial, i32, i32, |a: AddPartial, b| a.0 + b);
+///infix!(add, AddPartial, i32, i32, |a, b| a + b);
 ///
 ///fn main() {
 ///    let infix_adder = 5 *add* 5;
@@ -35,7 +35,7 @@ macro_rules! infix {
         impl std::ops::Mul<$input> for $partialname {
             type Output = $output;
             fn mul(self, rhs: $input) -> Self::Output {
-                $function(self, rhs)
+                $function(self.0, rhs)
             }
         }
     };
