@@ -1,0 +1,11 @@
+[package]
+name = "infix_macro"
+version = "0.1.0"
+edition = "2021"
+description = "Provides a macro that generates the neccesary boilerplate to use \"*operator*\" infix functions."
+readme = "README.md"
+license-file = "UNLISENCE"
+keywords = ["macro","infix operation"]
+categories = ["rust-patterns"]
+
+[dependencies]
